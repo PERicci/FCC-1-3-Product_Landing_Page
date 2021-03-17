@@ -52,6 +52,7 @@ ul {
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 /* NAVIGATION BAR AND LOGO */
@@ -60,14 +61,13 @@ a {
     margin: 0 auto;
     width: var(--w);
     height: 2rem;
-    padding: 0.2rem 0;
-    padding: 0 1rem 0;
 }
 
 #logo {
     float: left;
     height: 100%;
     width: auto;
+    margin-left: 1rem;
 }
 
 #nav-links {
