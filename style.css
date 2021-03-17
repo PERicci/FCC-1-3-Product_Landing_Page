@@ -1,3 +1,113 @@
-body {
-    background-color: black;
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    font-size: calc(12px + 1vw);
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    --w: 70%;
 }
+
+/* GENERAL */
+
+body {
+    position: relative;
+    background: url(Images/earth.jpg) top no-repeat, black;
+    background-size: 100% auto;
+    margin: auto;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#space {
+    width: var(--w);
+    height: 2rem;
+}
+
+main {
+    position: relative;
+    width: var(--w);
+    margin: auto;
+}
+
+footer {
+    position: relative;
+    width: var(--w);
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+/* NAVIGATION BAR AND LOGO */
+
+#nav-bar {
+    margin: 0 auto;
+    width: var(--w);
+    height: 2rem;
+    padding: 0.2rem 0;
+}
+
+#logo {
+    float: left;
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+#nav-links {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    line-height: 2rem;
+    margin-right: 1rem;
+}
+
+.nav-link {
+    margin: 0 0 0 4rem;  
+}
+
+/* BANNER */
+
+#banner img{
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+}
+
+/* BENEFITS */
+
+.big {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #FFCB00;
+    line-height: 1.7rem;
+    margin: 0;
+}
+
+.small {
+    font-size: 0.8rem;
+    color: #D1FAFF;
+    line-height: 0.8rem;
+    margin: 0 0 0.5rem;
+}
+
+/* FORM */
+
+
+
+/* FOOTER */
