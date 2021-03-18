@@ -43,6 +43,16 @@ footer {
     margin: auto;
 }
 
+.hidden {
+    display: block;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -85,25 +95,92 @@ a {
 
 /* BANNER */
 
-#banner img{
-    width: 100%;
-    height: auto;
-    visibility: hidden;
+    /* TITLE + SUBTITLE */
+
+#titlebox {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    z-index: 1;
 }
+
+#title-1, #title-2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: white;
+}
+
+#title-1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-left: -40rem;
+    animation: t1move 2s cubic-bezier(0,.8,.1,1) forwards;
+    animation-delay: 200ms;
+}
+            @keyframes t1move {
+                from {margin-left: -40rem;}
+                to {margin-left: 1rem;}
+            }
+
+#title-2 {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-top: -0.5rem;
+    margin-left: -40rem;
+    animation: t2move 2s cubic-bezier(0,.8,.1,1) forwards;
+    animation-delay: 700ms;
+}
+            @keyframes t2move {
+                from {margin-left: -40rem;}
+                to {margin-left: 2rem;}
+            }
+
+#subtitle {
+    margin-top: -0.5rem;
+    margin-left: -40rem;
+    padding: 0;
+    font-size: 1.28rem;
+    font-weight: 400;
+    color: #d2faff;
+    animation: stmove 2s cubic-bezier(0,.8,.1,1) forwards;
+    animation-delay: 500ms;
+}
+            @keyframes stmove {
+                from {margin-left: -40rem;}
+                to {margin-left: 2.2rem;}
+            }
+
+    /* SHIP */
+
+#ship {
+    position: absolute;
+    margin: 2rem 0;
+    width: 60%;
+    height: auto;
+    right: -40rem;
+    animation: shipmove 2s cubic-bezier(0,.8,.1,1) forwards;
+    animation-delay: 500ms;
+    z-index: 0;
+}
+            @keyframes shipmove {
+                from {right: -40rem;}
+                to {right: -5rem;}
+            }
 
 /* BENEFITS */
 
 .big {
     font-size: 1.7rem;
     font-weight: 600;
-    color: #FFCB00;
+    color: #FFCC00;
     line-height: 1.7rem;
     margin: 0;
 }
 
 .small {
     font-size: 0.8rem;
-    color: #D1FAFF;
+    color: #D2FAFF;
     line-height: 0.8rem;
     margin: 0 0 0.5rem;
 }
