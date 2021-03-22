@@ -179,11 +179,26 @@ a {
                 to {right: -5rem;}
             }
 
+/* GLOBAL FADEIN */
+
+#benefits, #form, #ships, #video, #testimonials, #footer {
+    opacity: 0;
+    animation: fadein 1s linear forwards;
+    animation-delay: 1s;
+}
+
 /* BENEFITS */
 
 #benefits {
-    margin: 4rem 0 0 4rem;
-    float: left;
+    display: flex;
+    border: solid lime;
+    width: 60%;
+    position: relative;
+    margin: 4rem 2rem 0;
+}
+
+#benefits-list {
+    max-width: 40%;
     padding: 0.5rem;
     border-radius: 0.4rem;
     background-color: rgba(0, 0, 0, 0.3);
@@ -197,7 +212,7 @@ a {
             }
 
 .big {
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 600;
     color: #FFCC00;
     line-height: 2.2rem;
@@ -205,10 +220,18 @@ a {
 }
 
 .small {
-    font-size: 1rem;
+    font-size: 1.37rem;
     color: #D2FAFF;
-    line-height: 0.5rem;
-    margin: 0 0 0.5rem 0.1rem;
+    line-height: 1.1rem;
+    margin: 0 0 0.5rem 0.2rem;
+}
+
+#signup-now {
+    max-width: 40%;
+    height: 15rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* FORM */
@@ -222,13 +245,32 @@ a {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+label {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 0;
+    margin: 0;
+}
+
 #form h1 {
+    font-size: 1.5rem;
     text-align: center;
     width: 100%;
-    margin: 0;
+    margin: 0 0 1rem;
     padding: 0;
     color: #FFCC00;
     font-weight: 600;
+}
+
+#form h2 {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 600;
+    color: #FFCC00;
+    margin: 0;
+    padding: 0;
 }
 
 .fgroup {
@@ -242,16 +284,6 @@ a {
 .fcontrol {
     height: 1rem;
     border-radius: 0.2rem;
-}
-
-#form h2 {
-    display: inline-block;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    font-weight: 600;
-    color: #FFCC00;
-    margin: 0;
-    padding: 0;
 }
 
 legend {
@@ -276,6 +308,7 @@ legend {
                 position: relative;
                 font-weight: 600;
                 color: #D2FAFF;
+                text-decoration: underline;
                 transition: all 0.8s;
             }
             #terms a:hover {
@@ -284,5 +317,19 @@ legend {
                 transition: all 0.8s;
             }
 
+input[type=checkbox].checkbox {
+    scale: 1.5;
+    margin-right: 0.3rem;
+}
 
 /* FOOTER */
+
+
+
+
+/* GLOBAL KEYFRAMES */
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
