@@ -192,7 +192,6 @@ a {
 .benefits-item {
     margin-bottom: 1rem;
 }
-
             .benefits-item:nth-child(3) {
                 margin-bottom: 0;
             }
@@ -218,22 +217,56 @@ a {
     margin: 4rem 0 2rem;
     width: 50%;
     float: right;
-    padding: 0.5rem;
+    padding: 0 0.5rem 0.5rem;
     border-radius: 0.4rem;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#form h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFCC00;
+    font-weight: 600;
 }
 
 .fgroup {
     font-family: 'Rajdhani', sans-serif;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.4rem;
 }
-
             .fgroup:nth-child(5) {
                 margin-bottom: 0;
             }
 
-#name-label, #email-label, legend {
+
+
+#form h2 {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 600;
     color: #FFCC00;
+    margin: 0;
+    padding: 0;
 }
+
+#form legend {
+    margin-left: -0.95rem;
+}
+
+#role-types {
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 0.9rem;
+    align-items: center;
+}
+            #role-types label {
+                text-align: left;
+            }
+            #role-types input {
+                margin-right: 0.2rem;
+            }
 
 /* FOOTER */
