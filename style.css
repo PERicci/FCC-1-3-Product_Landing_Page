@@ -239,7 +239,10 @@ a {
                 margin-bottom: 0;
             }
 
-
+.fcontrol {
+    height: 1rem;
+    border-radius: 0.2rem;
+}
 
 #form h2 {
     display: inline-block;
@@ -251,7 +254,7 @@ a {
     padding: 0;
 }
 
-#form legend {
+legend {
     margin-left: -0.95rem;
 }
 
@@ -265,8 +268,21 @@ a {
             #role-types label {
                 text-align: left;
             }
-            #role-types input {
-                margin-right: 0.2rem;
+
+#terms {
+    text-align: justify;
+}
+            #terms a {
+                position: relative;
+                font-weight: 600;
+                color: #D2FAFF;
+                transition: all 0.8s;
             }
+            #terms a:hover {
+                color: #FFCC00;
+                text-decoration: underline;
+                transition: all 0.8s;
+            }
+
 
 /* FOOTER */
