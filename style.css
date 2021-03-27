@@ -206,7 +206,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: top;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-top: 2%;
 }
 
@@ -240,6 +240,7 @@ a {
 
 #signup-now {
     height: 12rem;
+    margin-right: 1rem;
     padding: 0.5rem;
     border-radius: 0.4rem;
     background-color: rgba(0, 0, 0, 0.3);
@@ -251,50 +252,60 @@ a {
     grid-area: ships;
     justify-self: center;
     width: 60%;
-    float: left;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 1rem 1.5rem 0 1rem;
+    margin: 1rem 0 0;
+}
+
+.ships figure, .ships figcaption, .ships figure img {
+    margin: 0;
+    padding: 0;
 }
 
 .ships {
-    background-color: #d2faff6c;
+    background: url("https://www.transparenttextures.com/patterns/brushed-alum.png"), #d2faff6c;
     box-shadow:
-              0 0 0.05rem #ffea95,
-        inset 0 0 0.05rem #ffea95,
-              0 0 0.1rem 0.05rem #FFCC00,
-        inset 0 0 0.1rem 0.05rem #FFCC00,
+              0 0 0.05rem #d8d8d8,
+        inset 0 0 0.05rem #d8d8d8,
+              0 0 0.1rem 0.05rem #868686,
+        inset 0 0 0.1rem 0.05rem #868686,
         inset 0 0 0.2rem 0.05rem #000000;
     width: 100%;
     margin: 0 0 1rem;
-    padding: 0.4rem;
+    padding: 0.18rem 0.2rem 0.2rem;
     border-radius: 0.4rem;
-    text-align: center;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 600;
 }
             .ships:nth-child(3) {
                 margin: 0;
             }
 
-.ships figure {
-    margin: 0;
-    background: url(Images/vultureblk.png) 0.8rem 0.1rem/90% no-repeat;
+.ships figure img {
+    width: 100%;
+    border-radius: 0.35rem 0.35rem 0 0;
+    box-shadow: inset 0 0 0.2rem #d2faff6c;
 }
 
-.ships figure img {
-    width: 90%;
+.ships figcaption {
+    border-radius: 0 0 0.35rem 0.35rem;
+    background: url("https://www.transparenttextures.com/patterns/brushed-alum.png"), #868686;
+    box-shadow: inset 0 0 0.2rem #d2faff6c;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 /* FORM */
 
 #form {
-    margin-top: 1rem;
+    text-align: left;
+    margin: 0.85rem 0 auto;
+    align-self: center;
+    justify-self: center;
     grid-area: form;
     display: inline-block;
-    padding: 0 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem;
     border-radius: 0.4rem;
     background-color: rgba(116, 3, 3, 0.3);
 }
@@ -307,8 +318,8 @@ label {
 }
 
 #form h1 {
-    font-size: 1.5rem;
     text-align: center;
+    font-size: 1.5rem;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -329,7 +340,7 @@ label {
 
 .fgroup {
     font-family: 'Rajdhani', sans-serif;
-    margin: 0 0 0.4rem;
+    margin: 0 0 1rem;
 }
             .fgroup:nth-child(5) {
                 margin-bottom: 0;
@@ -338,7 +349,7 @@ label {
 .fcontrol {
     display: block;
     height: 1rem;
-    width: 100%;
+    width: 99%;
     border-radius: 0.2rem;
     font-size: 0.7rem;
 }
@@ -379,6 +390,21 @@ input[type=checkbox].checkbox {
     margin-right: 0.3rem;
 }
 
+#submit-div {
+    text-align: center;
+}
+
+#submit {
+    width: 6rem;
+    height: 1.5rem;
+    border-radius: 0 0 0.2rem 0.2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+
 /* FOOTER */
 
 
@@ -399,19 +425,57 @@ input[type=checkbox].checkbox {
 }
 @media (max-width: 1300px) {
     #space {height: 3rem;}
+    #benefits {
+        margin-top: -1rem;
+    }
     #role-types {grid-template-columns: repeat(2, 1fr);}
 }
 
 @media (max-width: 1000px) {
-    #space {height: 2rem;}
-    #role-types {grid-template-columns: repeat(3, 1fr);}
     main {
         grid-template-areas:
         "banner banner"
         "benefits benefits"
-        "ships ships"
         "form form"
+        "ships ships"
         "video video"
         "testimonials testimonials";
+    }
+    #space {height: 2rem;}
+    #role-types {grid-template-columns: repeat(3, 1fr);}
+    #ships {
+        width: 80%;
+    }
+    :root {
+        --w: 80%;
+    }
+}
+
+@media (max-width: 725px) {
+    :root {
+        --w: 90%;
+    }
+
+    .big {
+        font-size: 4rem;
+        line-height: 3.2rem;
+    }
+    
+    .small {
+        font-size: 1.83rem;
+        line-height: 1.8rem;
+    }
+
+    #signup-now {
+        height: 15rem;
+        margin: 0;
+    }
+
+    #ships {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem 0 0;
+        width: 90%
     }
 }
