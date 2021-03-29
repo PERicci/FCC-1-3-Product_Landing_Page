@@ -52,6 +52,8 @@ main {
     "ships form"
     "video video";
     grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: var(--w);
     margin: auto;
@@ -193,7 +195,7 @@ a {
 
 /* GLOBAL FADEIN */
 
-#benefits, #form, #ships, #video, #testimonials, #footer {
+#benefits, #form, #ships, #video-wraper, #footer {
     opacity: 0;
     animation: fadein 1s linear forwards;
     animation-delay: 1s;
@@ -405,6 +407,28 @@ input[type=checkbox].checkbox {
     font-family: 'Rajdhani', sans-serif;
 }
 
+/* VIDEO */
+
+#video-wraper {
+    --video-scale: 1;
+    --video-width: calc(100%*var(--video-scale));
+    --video-height: calc(56.25%*var(--video-scale));
+    grid-area: video;
+    margin: 2rem auto;
+    position: relative;
+    padding-bottom: var(--video-height);
+    width: var(--video-width);
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0.5rem white;
+    border-radius: 0.4rem;
+}
 
 /* FOOTER */
 
@@ -428,21 +452,29 @@ input[type=checkbox].checkbox {
 }
 
 @media (max-width: 1000px) {
-    main {
-        grid-template-areas:
-        "banner banner"
-        "benefits benefits"
-        "form form"
-        "ships ships"
-        "video video";
-    }
-    #space {height: 2rem;}
-    #role-types {grid-template-columns: repeat(3, 1fr);}
-    #ships {
-        width: 80%;
-    }
     :root {
         --w: 80%;
+    }
+
+    main {
+        grid-template-areas:
+            "banner banner"
+            "benefits benefits"
+            "form form"
+            "ships ships"
+            "video video";
+    }
+
+    #space {
+        height: 2rem;
+    }
+
+    #role-types {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #ships {
+        width: 80%;
     }
 }
 
@@ -457,13 +489,16 @@ input[type=checkbox].checkbox {
         margin: 0;
     }
 
-    /* SHIPS */
     #ships {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         margin: 1rem 0 0;
         width: 90%
+    }
+
+    #video-wraper {
+        margin: 1rem auto;
     }
 }
 
@@ -474,11 +509,11 @@ input[type=checkbox].checkbox {
 
     body::after {
         top: 15rem;
-        background: linear-gradient(to bottom, black, transparent 10%), url("https://www.transparenttextures.com/patterns/stardust.png");
+        background:
+            linear-gradient(to bottom, black, transparent 10%),
+            url("https://www.transparenttextures.com/patterns/stardust.png");
         background-size: initial;
     }
-
-    /* BANNER */
 
     #banner {
         margin: 0.5rem 0 0;
@@ -505,6 +540,7 @@ input[type=checkbox].checkbox {
                 @keyframes t2move {
                     to {margin-left: 0;}
                 }
+
     #subtitle {
         margin-top: -0.5rem;
         font-size: 1.2rem;
@@ -517,22 +553,17 @@ input[type=checkbox].checkbox {
         display: none;
     }
 
-    /* BENEFITS */
-
     #signup-now {
         background-color: rgba(27, 27, 27, 0.3);
         box-shadow: 0 0 0.5rem white;
         padding: 0.5rem 2rem;
     }
 
-    /* FORM */
-
     #form {
         display: block;
         width: 90%;
     }    
 
-    /* SHIPS */
     #ships {
         display: flex;
         flex-direction: row;
@@ -541,6 +572,11 @@ input[type=checkbox].checkbox {
         width: 90%
     }
 
-    #role-types {grid-template-columns: repeat(2, 1fr);}
+    #role-types {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    #video-wraper {
+        --video-scale: 0.9;
+    }
 }
