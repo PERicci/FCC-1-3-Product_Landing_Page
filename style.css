@@ -50,8 +50,7 @@ main {
     "banner banner"
     "benefits benefits"
     "ships form"
-    "video video"
-    "testimonials testimonials";
+    "video video";
     grid-template-columns: 1fr 1fr;
     position: relative;
     width: var(--w);
@@ -215,7 +214,7 @@ a {
 #benefits-list {
     padding: 0.5rem;
     border-radius: 0.4rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .benefits-item {
@@ -245,7 +244,7 @@ a {
     margin-right: 1rem;
     padding: 0.5rem;
     border-radius: 0.4rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* SHIPS */
@@ -309,7 +308,7 @@ a {
     display: inline-block;
     padding: 0.5rem 0.5rem 0.5rem;
     border-radius: 0.4rem;
-    background-color: rgba(116, 3, 3, 0.3);
+    background: url("https://www.transparenttextures.com/patterns/stardust.png"), #002327;
 }
 
 label {
@@ -420,13 +419,8 @@ input[type=checkbox].checkbox {
 }
 
 /* GLOBAL MEDIA QUERIES */
-@media (max-width: 1600px) {
-    #space {
-        height: 1rem;
-    }
-}
+
 @media (max-width: 1300px) {
-    #space {height: 3rem;}
     #benefits {
         margin-top: -1rem;
     }
@@ -440,8 +434,7 @@ input[type=checkbox].checkbox {
         "benefits benefits"
         "form form"
         "ships ships"
-        "video video"
-        "testimonials testimonials";
+        "video video";
     }
     #space {height: 2rem;}
     #role-types {grid-template-columns: repeat(3, 1fr);}
@@ -456,43 +449,7 @@ input[type=checkbox].checkbox {
 @media (max-width: 725px) {
     :root {
         --w: 90%;
-    }
-
-    /* TITLES */
-    #title-1 {
-        font-size: 5rem;
-        line-height: 5rem;
-    }
-                @keyframes t1move {
-                    to {margin-left: -0.5rem;}
-                }
-    
-    #title-2 {
-        font-size: 6rem;
-        line-height: 4.5rem;
-    }
-                @keyframes t2move {
-                    to {margin-left: 0rem;}
-                }
-
-    #subtitle {
-        font-size: 1.54rem;
-        margin-top: -0.2rem;
-
-    }
-                @keyframes stmove {
-                    to {margin-left: 0.2rem;}
-                }
-
-    /* BENEFITS */
-    .big {
-        font-size: 4rem;
-        line-height: 3.2rem;
-    }
-    
-    .small {
-        font-size: 1.83rem;
-        line-height: 1.8rem;
+        font-size: calc(16px);
     }
 
     #signup-now {
@@ -508,4 +465,82 @@ input[type=checkbox].checkbox {
         margin: 1rem 0 0;
         width: 90%
     }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --w: 100%;
+    }
+
+    body::after {
+        top: 15rem;
+        background: linear-gradient(to bottom, black, transparent 10%), url("https://www.transparenttextures.com/patterns/stardust.png");
+        background-size: initial;
+    }
+
+    /* BANNER */
+
+    #banner {
+        margin: 0.5rem 0 0;
+    }
+
+    #titlebox {
+        display: block;
+        text-align: center;
+    }
+
+    #title-1 {
+        font-size: 4.2rem;
+        line-height: 3.2rem;
+    }
+                @keyframes t1move {
+                    to {margin-left: 0;}
+                }
+    
+    #title-2 {
+        font-size: 4.7rem;
+        line-height: 4.7rem;
+        margin-top: -0.5rem;
+    }
+                @keyframes t2move {
+                    to {margin-left: 0;}
+                }
+    #subtitle {
+        margin-top: -0.5rem;
+        font-size: 1.2rem;
+    }
+                @keyframes stmove {
+                    to {margin-left: 0;}
+                }
+    
+    #ship {
+        display: none;
+    }
+
+    /* BENEFITS */
+
+    #signup-now {
+        background-color: rgba(27, 27, 27, 0.3);
+        box-shadow: 0 0 0.5rem white;
+        padding: 0.5rem 2rem;
+    }
+
+    /* FORM */
+
+    #form {
+        display: block;
+        width: 90%;
+    }    
+
+    /* SHIPS */
+    #ships {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem 0 0;
+        width: 90%
+    }
+
+    #role-types {grid-template-columns: repeat(2, 1fr);}
+
 }
